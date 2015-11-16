@@ -114,6 +114,11 @@ span.marker-experimental.marker-right {
     width: 110px;
     height: 28px;
 }
+span.wiking.marker-beta {
+    background-image: url(../images/beta.png);
+    width: 32px;
+    height: 32px;
+}
 span.wiking.smiley {
     background-repeat: no-repeat;
     display: inline-block;
@@ -181,6 +186,12 @@ span.wiking.smiley-exclamation {
 }
 span.wiking.smiley-question {
     background-image: url(../images/smileys/question-frame.png);
+}
+span.wiking.smiley-success {
+    background-image: url(../images/smileys/success-frame.png);
+}
+span.wiking.smiley-failure {
+    background-image: url(../images/smileys/failure-frame.png);
 }
 .wiking.external, div.wiki .wiking.external {
     background-repeat: no-repeat;

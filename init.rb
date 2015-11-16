@@ -20,6 +20,10 @@ Rails.configuration.to_prepare do
         ApplicationHelper.send(:include, WikingApplicationHelperPatch)
     end
 
+    unless Redmine::Export::PDF::ITCPDF.included_modules.include?(WikingPDFPatch)
+        Redmine::Export::PDF::ITCPDF.send(:include, WikingPDFPatch)
+    end
+
     unless JournalsController.included_modules.include?(WikingLlControllerPatch)
         JournalsController.send(:include, WikingLlControllerPatch)
     end
@@ -63,7 +67,7 @@ Redmine::Plugin.register :wiking do
     author_url 'http://www.andriylesyuk.com/'
     description 'Wiki Next Generation plugin extends Redmine Wiki syntax.'
     url 'http://projects.andriylesyuk.com/projects/wiking'
-    version '0.1.0'
+    version '1.0.0b'
 
     project_module :wiki do
         permission :view_hidden_content, {}
