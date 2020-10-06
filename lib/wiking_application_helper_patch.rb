@@ -428,7 +428,7 @@ module WikingApplicationHelperPatch
                 if Redmine::Plugin.installed?(:redmine_people) && User.current.allowed_people_to?(:view_people, user)
                     link_to(name, { :controller => 'people', :action => 'show', :id => user.login.downcase }, :class => user.css_classes)
                 else
-                    link_to(name, { :controller => 'users', :action => 'show', :id => user.login.downcase }, :class => user.css_classes)
+                    link_to(name, user_path(user.login.downcase), :class => user.css_classes)
                 end
             else
                 link_to_user_without_login(user, options)
